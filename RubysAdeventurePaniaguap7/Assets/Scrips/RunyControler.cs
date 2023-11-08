@@ -4,25 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class RunyControler : MonoBehaviour
+public class RunyController : MonoBehaviour
 {
+    public int maxHealth = 5;
+    int currentHealth;
+    Rigidbody2D rigidbody2D;
+    float horizontal;
+    float vertical;
     // Start is called before the first frame update
     void Start()
     {
-        //QualitySettings.vSyncCount = 0;
-        //Application.targetFrameRate = 10;
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
 
+        
+    }
+    void FixedUpdate()
+    {
         Vector2 position = transform.position;
         position.x = position.x + 3.0f * horizontal * Time.deltaTime;
         position.y = position.y + 3.0f * vertical * Time.deltaTime;
 
-        transform.position = position;
+        rigidbody2D.MovePosition(position);
     }
+    void ChangeHealth(int amount); 
 }
