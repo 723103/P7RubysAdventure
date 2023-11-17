@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Healthcollectable : MonoBehaviour
 {
-    // Start is called before the first frame update
     void OntriggerEnter2D(Collider2D other)
     {
-        Rubycontroller controller = other.GetComponent<Rubycontroller>();
+        RubyController controller = other.GetComponent<RubyController>();
         if (controller != null)
         {
             controller.ChangeHealth(1);

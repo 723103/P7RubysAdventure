@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class RunyController : MonoBehaviour
+public class RubyController : MonoBehaviour
 {
     public float speed = 3.0f;
     public int maxHealth = 5;
     int currentHealth;
 
 
-    new Rigidbody2D rigidbody2d;
+    Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
     // Start is called before the first frame update
@@ -47,3 +47,5 @@ public class RunyController : MonoBehaviour
 
 
 }
+
+
